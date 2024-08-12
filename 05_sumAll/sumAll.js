@@ -2,6 +2,7 @@ const sumAll = function(a, b) {
 
  let sum = 0;
  let largest;
+ let smallest;
 
  // If either number is negative stop here and return error
 if (a < 0 || b < 0) {
@@ -15,11 +16,13 @@ if (!Number.isInteger(a) || !Number.isInteger(b)) {
 // Works out the largest number of the two arguments
  if (a > b) {
     largest = a;
+    smallest = b;
  } else if (a < b) {
     largest = b;
+    smallest = a;
  }
  
- for (let i = 0; i <= largest; i++) {
+ for (let i = smallest; i <= largest; i++) {
     sum += i;
  }
 

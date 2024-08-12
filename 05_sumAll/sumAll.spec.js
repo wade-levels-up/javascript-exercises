@@ -22,4 +22,7 @@ describe('sumAll', () => {
   test('returns ERROR with non-number parameters', () => {
     expect(sumAll(10, [90, 1])).toEqual('ERROR');
   });
+  test('works with smallest number greater than 1', () => {
+    expect(sumAll(4, 8)).toEqual(30);
+  });
 });
