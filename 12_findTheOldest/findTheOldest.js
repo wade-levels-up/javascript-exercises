@@ -2,7 +2,7 @@
 // work out the person's age.
 // If the death value returns undefined it will equal false
 // in which case we assign death the value of the current date
-const getAge = function(birth, death) {
+function getAge(death, birth) {
     if (!death) {
         death = new Date().getFullYear();
     }
@@ -18,12 +18,13 @@ const getAge = function(birth, death) {
 // and personAge, we return the comparison between the two, which, if
 // the person being compared against the previous is older, they then
 // get returned becoming the new accumulator value.
+
 const findTheOldest = function(people) {
-    return people.reduce((oldest, person) => {
-        let oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath);
-        let personAge = getAge(person.yearOfBirth, person.yearOfDeath);
-        return oldestAge < personAge ? person : oldest;     
-    })
+ return people.reduce((init, next) => {
+    let initAge = getAge(init.yearOfDeath, init.yearOfBirth);
+    let nextAge = getAge(next.yearOfDeath, next.yearOfBirth);
+    return initAge < nextAge ? next : init;
+ })
 };
 
 // Do not edit below this line
