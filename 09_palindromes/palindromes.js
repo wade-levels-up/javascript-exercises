@@ -6,24 +6,13 @@ const palindromes = function (string) {
         '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     let array = string
-        .split('')
-        .map(item => item.toLowerCase())
-        .filter(item => alphabet.includes(item));
+        .toLowerCase().split('')
+        .filter(item => alphabet.includes(item))
+        .join('');
 
-    let arrayRv = string
-        .split('')
-        .reverse()
-        .map(item => item.toLowerCase())
-        .filter(item => alphabet.includes(item));
+    let arrayRv = array.split('').reverse().join('');
 
-    console.log({array}, {arrayRv});
-
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] !== arrayRv[i]) {
-            return false;
-        }
-    }
-    return true;
+    return array === arrayRv;
 }
 
 // Do not edit below this line
