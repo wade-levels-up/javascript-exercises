@@ -13,7 +13,7 @@ function getAge(death, birth) {
 // the specific person who is the oldest.
 // In order to do this we set 'oldest' as the accumulator, though it's
 // not necessarily the oldest - at least initially, but it will be.
-
+s
 // On each pass of the reduce method we create two variables, oldestAge
 // and personAge, we return the comparison between the two, which, if
 // the person being compared against the previous is older, they then
